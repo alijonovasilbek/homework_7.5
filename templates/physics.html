@@ -1,0 +1,139 @@
+{% extends 'bootstrap.html' %}
+{% load static %}
+
+{% block title %}
+ Prizes
+{% endblock %}
+{% block content %}
+<p><img src="https://img.freepik.com/premium-photo/quantum-mechanics-scientific-concept-modern-physics-ai-generated_344538-2525.jpg" alt="Nobel Prize Medal" width="1600" height="400" style="margin-top:100px;"></p>
+<h1>THE NOBEL PRIZE IN PHYSICS</h1>
+
+<p>Awarded the first Nobel Prize in Physics, Wilhelm Röntgen discovered X-radiation. This X-ray tube became a frequently used instrument in medicine after this discovery. © Nobel Media. Photo: Alexander Mahmoud</p>
+
+<h2>About the prize</h2>
+
+<p>“The said interest shall be divided into five equal parts, which shall be apportioned as follows: /- – -/ one part to the person who shall have made the most important discovery or invention within the field of physics …” (Excerpt from the will of Alfred Nobel)</p>
+
+<p>Physics was the prize area which Alfred Nobel mentioned first in his will from 1895. At the end of the nineteenth century, many people considered physics as the foremost of the sciences, and perhaps Nobel saw it this way as well. His own research was also closely tied to physics.</p>
+
+<p>The Nobel Prize in Physics is awarded by the Royal Swedish Academy of Sciences, Stockholm, Sweden.</p>
+
+<p>See all physics laureates or learn more about the nomination process.</p>
+
+<h3>Quick facts</h3>
+
+<ul>
+    <li>Physics prizes: 117</li>
+    <li>Physics laureates: 225</li>
+    <li>Awarded women: 5</li>
+    <li>Youngest laureate: 25</li>
+    <li>Oldest laureate: 96</li>
+</ul>
+
+<h2>The Nobel Prize in Physics 2023</h2>
+
+<p>Experiments with light capture the shortest of moments</p>
+
+<p>The three Nobel Prize laureates in physics 2023 are being recognised for their experiments, which have given humanity new tools for exploring the world of electrons inside atoms and molecules. They have demonstrated a way to create extremely short pulses of light that can be used to measure the rapid processes in which electrons move or change energy.</p>
+
+<h4>Related articles</h4>
+
+<p>Press release: The Nobel Prize in Physics 2023</p>
+<p>Popular science background: Electrons in pulses of light</p>
+<p>Scientific background: “for experimental methods that generate attosecond pulses of light for the study of electron dynamics in matter”</p>
+
+<h2>Nobel Prize in Physics</h2>
+
+<h3>The 2023 physics laureates</h3>
+
+<p>The Royal Swedish Academy of Sciences has decided to award the Nobel Prize in Physics 2023 to Pierre Agostini, Ferenc Krausz and Anne L’Huillier “for experimental methods that generate attosecond pulses of light for the study of electron dynamics in matter.”</p>
+
+<p>Pierre Agostini, Ferenc Krausz and Anne L'Huillier</p>
+
+<h2>One-minute crash course</h2>
+
+<p>Nobel Prize in Physics 2023</p>
+
+<p>Exploring the world of electrons</p>
+
+<p>How can you capture what takes place inside an atom? To photograph high speed motion you need a very fast camera. But to photograph what’s going on inside an atom you need something much, much faster.</p>
+
+  <div class="row" style="margin:20px">
+    {% for p in prize %}
+     {% if p.category == "Physics" %}
+      <div class="col-md-4" style="margin-top:100px; margin-bottom:50px" >
+        <div class="card mb-4">
+          <img class="card-img-top" src="{% static  p.image %}" alt="{{p.name}}" width="400" height="300">
+          <div class="card-body">
+            <h5 class="card-title">{{ p.name }}</h5>
+            <p class="card-text">{{ p.age }}</p>
+            <a href="{% url 'prize_info' p.pk %}" class="btn btn-primary">See Profile</a>
+            <a href="{% url 'add_prize' %}" class="btn btn-primary">Add</a>
+            <a href="{% url 'edit_prize' p.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_prize' p.pk %}" class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+          <div id="line" style="width:470px; height:10px; background-color:blue;"></div>
+      </div>
+     {% endif %}
+    {% endfor %}
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<h3>Did you know?</h3>
+
+<p>Explore prizes and laureates</p>
+
+<p>Select the category or categories you would like to filter by</p>
+
+<ul>
+    <li>Physics</li>
+    <li>Chemistry</li>
+    <li>Medicine</li>
+    <li>Literature</li>
+    <li>Peace</li>
+    <li>Economic Sciences</li>
+</ul>
+
+<p>Decrease the year by one–</p>
+
+<p>Choose a year you would like to search in</p>
+
+<ul>
+    <li>2023</li>
+</ul>
+
+<p>Increase the year by one+</p>
+
+<p>Explore</p>
+
+<p>Who did what?</p>
+
+<p>How many physics laureates can you match?</p>
+
+<p>Can you match the right physics laureate with the right discovery? Have a try!</p>
+
+<p>Matching pairs physics</p>
+
+<h3>Questions and answers</h3>
+
+<p>What are the Nobel Prize categories?</p>
+
+<p>The Nobel Prize categories are physics, chemistry, physiology or medicine, literature and peace and were laid out in the will of Alfred Nobel. Find out more in the FAQ.</p>
+
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFy5yZrRAQhVoVFz7RmZ28II4s3yoN87qkuQ&usqp=CAU" alt="Nobel Prize Medal" width="1600" height="400" style="margin-top:100px;"></p>
+
+<p><em>The Nobel Prize medal. © Nobel Prize Outreach. Photo: Clément Morin.</em></p>
+
+
+</html>
+{% endblock %}

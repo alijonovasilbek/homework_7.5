@@ -1,0 +1,72 @@
+{% extends 'bootstrap.html' %}
+{% load static %}
+
+{% block title %}
+ Prizes
+{% endblock %}
+{% block content %}
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFOvM_zi9IuUnTF2fbSNm0LIjPlz1UapVx4w&usqp=CAU" alt="Nobel Prize Medal" width="1600" height="400" style="margin-top:100px;"></p>
+<h2>About the Prize</h2>
+<p>“The said interest shall be divided into five equal parts, which shall be apportioned as follows: /- – -/ one part to the person who shall have made the most important chemical discovery or improvement…” (Excerpt from the will of Alfred Nobel.)</p>
+<p>Chemistry was the most important science for Alfred Nobel’s own work. The development of his inventions as well as the industrial processes he employed were based upon chemical knowledge. Chemistry was the second prize area that Nobel mentioned in his will.</p>
+<p>The Nobel Prize in Chemistry is awarded by the Royal Swedish Academy of Sciences, Stockholm, Sweden.</p>
+<p><a href="#">See all chemistry laureates</a> or <a href="#">learn about the nomination process</a>.</p>
+
+<h2>Quick Facts</h2>
+<ul>
+<li>Chemistry prizes: 115</li>
+<li>Chemistry laureates: 194</li>
+<li>Awarded women: 8</li>
+<li>Youngest laureate: 35</li>
+<li>Oldest laureate: 97</li>
+</ul>
+<p><a href="#">More facts and figures</a></p>
+
+<h2>The Nobel Prize in Chemistry 2023</h2>
+<p><strong>They added colour to nanotechnology</strong></p>
+<p>Moungi G. Bawendi, Louis E. Brus, and Aleksey Yekimov are awarded the Nobel Prize in Chemistry 2023 for the discovery and development of quantum dots. These tiny particles have unique properties and now spread their light from television screens and LED lamps. They catalyze chemical reactions and their clear light can illuminate tumor tissue for a surgeon.</p>
+<p><a href="#">Related articles</a></p>
+
+<h3>Press release: The Nobel Prize in Chemistry 2023</h3>
+<h3>Popular science background: They added colour to nanotechnology</h3>
+<h3>Scientific background: Quantum dots – seeds of nanoscience</h3>
+<p>An illustration of a bucket of paint with colored balls beneath it, representing quantum dots. © Johan Jarnestad/The Royal Swedish Academy of Sciences</p>
+
+<div class="row" style="margin:20px">
+    {% for p in prize %}
+     {% if p.category == "Chemistry" %}
+      <div class="col-md-4" style="margin-top:100px; margin-bottom:50px" >
+        <div class="card mb-4">
+          <img class="card-img-top" src="{% static  p.image %}" alt="{{p.name}}" width="400" height="300">
+          <div class="card-body">
+            <h5 class="card-title">{{ p.name }}</h5>
+            <p class="card-text">{{ p.age }}</p>
+            <a href="{% url 'prize_info' p.pk %}" class="btn btn-primary">See Profile</a>
+            <a href="{% url 'add_prize' %}" class="btn btn-primary">Add</a>
+            <a href="{% url 'edit_prize' p.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_prize' p.pk %}" class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+          <div id="line" style="width:470px; height:10px; background-color:blue;"></div>
+      </div>
+ {% endif %}
+ {% endfor %}
+</div>
+
+
+<h2>Nobel Prize in Chemistry</h2>
+<p><strong>The 2023 chemistry laureates</strong></p>
+<p>The Nobel Prize in Chemistry 2023 was awarded to Moungi Bawendi, Louis Brus, and Aleksey Yekimov “for the discovery and synthesis of quantum dots.”</p>
+<p>Independently of each other, Ekimov and Brus succeeded in creating quantum dots, and Bawendi revolutionized the chemical production.</p>
+<p>Quantum dots now illuminate computer monitors and television screens based on QLED technology. They also add nuance to the light of some LED lamps, and biochemists and doctors use them to map biological tissue.</p>
+<p>Moungi Bawendi, Louis Brus, and Alexei Ekimov</p>
+<p>Ill. Niklas Elmehed © Nobel Prize Outreach</p>
+
+<h2>One-minute crash course</h2>
+<p>Nobel Prize in Chemistry 2023</p>
+<p>Quantum dots</p>
+<p>Have you ever heard of a quantum dot? Learn more about the strange and tiny particles whose existence led to a Nobel Prize in Chemistry.</p>
+
+</body>
+</html>
+{% endblock %}

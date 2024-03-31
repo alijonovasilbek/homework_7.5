@@ -1,0 +1,32 @@
+{% extends 'bootstrap.html' %}
+{% load static %}
+{% block title %}
+  Prize info
+{% endblock %}
+
+{% block content %}
+
+
+        <div class="row" style="margin:30px">
+
+              <div class="col-md-4" style="margin-top:100px; margin-bottom:50px" >
+                <div class="card mb-4">
+                  <img class="card-img-top" src="{% static  prize.image %}" alt="{{p.name}}" width="800" height="300">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ prize.name }}</h5>
+                     <p class="card-text"><h6>Yaer:</h6>{{ prize.age }}</p>
+                       <p class="card-text"><h6>Category:</h6>{{ prize.category }}</p>
+                    <p class="card-text"><h6>Work:</h6>{{ prize.info }}</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+
+<!--                    <a href="{% url 'add_prize' %}" class="btn btn-primary">Add</a>-->
+<!--                    <a href="{% url 'edit_prize' prize.pk %}" class="btn btn-primary">Edit</a>-->
+                  </div>
+                </div>
+                  <div id="line" style="width:470px; height:10px; background-color:blue;"></div>
+              </div>
+            </div>
+
+
+
+{%endblock %}

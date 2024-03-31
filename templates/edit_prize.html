@@ -1,0 +1,80 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}
+  Change Prize
+{% endblock %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <br>
+    <br>
+    {{ form.as_p }}
+
+    <button type="submit">Saqlash</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">-->
+<!--  <h1>Change Prize Info</h1>-->
+<!--  <div class="row justify-content-center">-->
+<!--    <div class="col-md-6">-->
+<!--      <form action="" method="post" enctype="multipart/form-data">-->
+<!--        {% csrf_token %}-->
+<!--        <div class="mb-3">-->
+<!--          <label for="name" class="form-label">Name:</label>-->
+<!--          <input type="text" class="form-control" id="name" name="name" value="{{prize.name}}" required>-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--          <label for="age" class="form-label">Age:</label>-->
+<!--          <input type="text" class="form-control" id="age" name="age" value="{{prize.age}}" required>-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--          <label for="category" class="form-label">Category:</label>-->
+<!--          <input type="text" class="form-control" id="category" name="category" value="{{prize.category}}" required>-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--          <label for="info" class="form-label">Info:</label>-->
+<!--          <input type="text" class="form-control" id="info" name="info" value="{{prize.info}}" required>-->
+<!--        </div>-->
+<!--        <div class="mb-3">-->
+<!--          <label for="image" class="form-label">Image:</label>-->
+<!--          <input type="file" class="form-control" id="image" name="image" required>-->
+<!--        </div>-->
+<!--        <button type="submit" class="btn btn-primary">Save Changes</button>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+{% endblock %}
+
+
+{% block my_scripts %}
+<script>
+  $ ('input').addClass('form-control');
+     $ ('textarea[type=text]').addClass('form-control');
+
+
+</script>
+
+
+
+{% endblock %}

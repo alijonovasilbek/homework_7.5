@@ -1,0 +1,69 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}
+ Insert new prize
+{% endblock %}
+
+{% block content %}
+<h3>Insert prize</h3>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <br>
+    {{ form.as_p }}
+    <input type="submit" value="Add prize" class="btn btn-success">
+</form>
+
+{% block my_scripts %}
+<script>
+  $ ('input').addClass('form-control');
+     $ ('textarea[type=text]').addClass('form-control');
+
+
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+{% endblock %}
+
+<!--  <div class="col-md-4" style="margin-top:100px; margin-bottom:50px">-->
+<!--    <div class="card mb-4">-->
+<!--        <div class="card-body">-->
+<!--            <h5 class="card-title">Insert New Prize</h5>-->
+<!--            <form action="" method="post" style="margin-top:20px" enctype="multipart/form-data">-->
+<!--                {% csrf_token %}-->
+<!--                <fieldset>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="name">Name:</label>-->
+<!--                        <input type="text" class="form-control" id="name" name="name" required>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="age">Age:</label>-->
+<!--                        <input type="text" class="form-control" id="age" name="age" required>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="category">Category:</label>-->
+<!--                        <input type="text" class="form-control" id="category" name="category" required>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="info">Info:</label>-->
+<!--                        <input type="text" class="form-control" id="info" name="info" required>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="image">Image:</label>-->
+<!--                        <input type="file" class="form-control-file" id="image" name="image" value="Search images" required><br>-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-primary" >Add Prize</button><br>-->
+<!--                </fieldset>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

@@ -1,0 +1,11 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}
+  Send email
+{% endblock %}
+
+{% block content %}
+    <h1>Emails Sent Successfully!</h1>
+    <p>Your emails have been successfully sent to all users who have provided an email address.</p>
+    <p><a href="{% url 'base' %}">Back to Home</a></p>
+{% endblock %}

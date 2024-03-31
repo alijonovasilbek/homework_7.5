@@ -1,0 +1,76 @@
+{% extends 'bootstrap.html' %}
+{% load static %}
+{% block title %}
+  Prize info
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <br>
+     <br>
+
+    {{ form.as_p }}
+    <input type="submit" value="Delete" class="btn btn-danger">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <div class="row" style="margin:20px">-->
+<!--            <p>Rostdan ham bu mavzuni o'chirmmoqchimisiz? </p>-->
+
+<!--              <div class="col-md-4" style="margin-top:100px; margin-bottom:50px" >-->
+<!--                <div class="card mb-4">-->
+<!--                  <img class="card-img-top" src="{% static  prize.image %}" alt="{{p.name}}" width="400" height="300">-->
+<!--                  <div class="card-body">-->
+<!--                    <h5 class="card-title">{{ prize.name }}</h5>-->
+<!--                     <p class="card-text"><h6>Yaer:</h6>{{ prize.age }}</p>-->
+<!--                    <p class="card-text"><h6>Work:</h6>{{ prize.info }}</p>-->
+
+<!--                      <form method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <button type="submit" style="background-color: red;-->
+<!--        color: #fff; /*-->
+<!--        border: 1px solid #00f;-->
+<!--        padding: 5px 10px;-->
+<!--        border-radius: 10px;-->
+<!--        cursor: pointer;"> Delete</button>-->
+<!--                     </form>-->
+
+<!--                  </div>-->
+<!--                </div>-->
+<!--                  <div id="line" style="width:470px; height:10px; background-color:blue;"></div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+{% endblock %}
+
+
+{% block my_scripts %}
+<script>
+  $ ('input').addClass('form-control');
+     $ ('textarea[type=text]').addClass('form-control');
+
+
+</script>
+
+
+
+{% endblock %}
